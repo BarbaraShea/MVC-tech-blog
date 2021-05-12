@@ -23,13 +23,13 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_name: {
-        type: DataTypes.STRING,
-        references: {
-          model: 'user',
-          key: 'user_name',
-        },
-      },
+    // user_name: {
+    //     type: DataTypes.STRING,
+    //     references: {
+    //       model: 'user',
+    //       key: 'user_name',
+    //     },
+    //   },
     userId: {
       type: DataTypes.INTEGER,
       references: {
@@ -43,7 +43,7 @@ Post.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'posts',
+    modelName: 'post',
   }
 );
 
