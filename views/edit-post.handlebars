@@ -4,7 +4,13 @@
 <div class="form text-center comment">
 <input class="form-input" type="hidden" id={{post.id}} name={{post.id}}/>
 <textarea class="form-input" id="comment-body" name="commment-body">{{post.contents}}</textarea>
-    <button class="btn btn-primary" type="submit">submit:</button>
-</div>
+    <div class="col-md-4">
+        <button class="btn btn-sm btn-delete" data-id="{{post.id}}">DELETE</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm" type="submit" data-id="{{post.id}}">EDIT</button>
+      </div></div>
   </p>
 </div>
+
+<script src="/js/edit"></script>
