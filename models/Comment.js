@@ -11,18 +11,11 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    date_created: {
+    dateCreated: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW,
       },
-    // user_name: {
-    //     type: DataTypes.STRING,
-    //     references: {
-    //         model: 'user',
-    //         key: 'user_name',
-    //       },
-    //     },
     content: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -34,13 +27,7 @@ Comment.init(
         key: 'id',
       },
     },
-    // userId: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //       model: 'user',
-    //       key: 'id',
-    //     },
-    //   },
+ 
   },
   {
     sequelize,
