@@ -36,6 +36,7 @@ router.get('/post/:id', async (req, res) => {
     if (postData) {
       // serialize the data
       const post = postData.get({ plain: true });
+      console.log(post)
       // which view should we render for a single-post?
       res.render('single-post', { post });
     } else {

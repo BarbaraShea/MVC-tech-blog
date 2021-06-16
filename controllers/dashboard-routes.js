@@ -5,7 +5,8 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
   try {
     // store the results of the db query in a variable called postData. should use something that "finds all" from the Post model. may need a where clause!
-    const postData = await Post.findAll({ where: { userId: req.body.userId } });
+    const postData = await Post.findAll({ where: { userId: req.session.userId } });
+   
     // this sanitizes the data we just got from the db above (you have to create the above)
     const posts = postData.map((post) => post.get({ plain: true }));
 
@@ -17,6 +18,7 @@ router.get('/', withAuth, async (req, res) => {
       posts,
     });
   } catch (err) {
+    console.log("hit")
     res.redirect('login');
   }
 });
