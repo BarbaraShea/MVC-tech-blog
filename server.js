@@ -21,7 +21,10 @@ const sess = {
 };
 
 app.use(session(sess));
-
+ app.get("/", function(req, res) {
+      res.json(path.join(__dirname, "public/index.html"));
+  });
+  
 const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
